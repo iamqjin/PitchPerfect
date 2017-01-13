@@ -21,12 +21,10 @@ Pitch Perfect는 두 화면으로 이루어져 있습니다.
 
 * Recording Time : 녹음 시, 녹음되고 있는 시간을 볼 수 있게 하였습니다.
 <img src="/img/beforerecord.png" width="250"></img>
-<br />
 
 * Recording Pause : 녹음 시, 녹음 버튼을 다시 눌렀을 시 일시정지 기능을 추가하였습니다.
 
 <img src="/img/pause.png" width="250"></img>
-<br />
 
 
 made by [iamqjin]
