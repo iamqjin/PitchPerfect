@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NNK-I3-OZr">
-                                <rect key="frame" x="16" y="214" width="343" height="323"/>
+                                <rect key="frame" x="16" y="194" width="343" height="343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9f9-tt-cmS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="155"/>
@@ -41,11 +41,25 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-jF-8ZH">
+                                        <rect key="frame" x="0.0" y="155" width="343" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhW-NI-f4q">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="gwb-bV-97w"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2VY-bJ-Vlb">
-                                        <rect key="frame" x="0.0" y="155" width="343" height="104"/>
+                                        <rect key="frame" x="0.0" y="235" width="343" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GST-5j-QvQ">
-                                                <rect key="frame" x="118" y="0.0" width="107" height="104"/>
+                                                <rect key="frame" x="118" y="0.0" width="107" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -53,7 +67,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-Jj-7kI">
-                                        <rect key="frame" x="0.0" y="259" width="343" height="64"/>
+                                        <rect key="frame" x="0.0" y="279" width="343" height="64"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlF-xp-Vgh">
                                                 <rect key="frame" x="139.5" y="0.0" width="64" height="64"/>
@@ -84,7 +98,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NNK-I3-OZr" secondAttribute="bottom" constant="130" id="D80-ht-fcY"/>
-                            <constraint firstItem="NNK-I3-OZr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="HxK-Uj-MzV"/>
+                            <constraint firstItem="NNK-I3-OZr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="130" id="HxK-Uj-MzV"/>
                             <constraint firstItem="NNK-I3-OZr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IFn-CE-kH0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NNK-I3-OZr" secondAttribute="trailing" id="SXO-ub-faq"/>
                         </constraints>
@@ -93,6 +107,7 @@
                     <connections>
                         <outlet property="recordButton" destination="siK-om-IZx" id="SaF-oB-56L"/>
                         <outlet property="recordingLabel" destination="GST-5j-QvQ" id="VPz-RG-nYf"/>
+                        <outlet property="statusLabel" destination="IhW-NI-f4q" id="q4E-GI-hm2"/>
                         <outlet property="stopRecordingButton" destination="wDh-cG-NdL" id="43i-oP-aLt"/>
                         <segue destination="ftR-j8-YgE" kind="show" identifier="stopRecording" id="wCF-rd-20h"/>
                     </connections>
