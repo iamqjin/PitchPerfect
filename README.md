@@ -27,6 +27,9 @@ Pitch Perfect는 두 화면으로 이루어져 있습니다.
 
 <img src="/img/pause.png" width="250"></img>
 
+### 시현 영상  
+
+https://youtu.be/NoPQjmGCTv4
 
 made by [iamqjin]
 
