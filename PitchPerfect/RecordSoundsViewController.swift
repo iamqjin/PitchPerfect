@@ -13,7 +13,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder: AVAudioRecorder!
     
-    var timer = Timer()
+    var timer : Timer!
     
     var soundFileURL:URL!
     

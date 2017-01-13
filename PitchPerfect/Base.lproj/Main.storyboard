@@ -72,22 +72,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlF-xp-Vgh">
                                                 <rect key="frame" x="139.5" y="0.0" width="64" height="64"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-aM-alP">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDh-cG-NdL">
                                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDh-cG-NdL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="64" id="E5Q-hi-DRS"/>
-                                                                    <constraint firstAttribute="width" constant="64" id="JLB-eZ-avm"/>
-                                                                </constraints>
-                                                                <state key="normal" image="Stop"/>
-                                                                <connections>
-                                                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="12g-4Q-dNX"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="E5Q-hi-DRS"/>
+                                                            <constraint firstAttribute="width" constant="64" id="JLB-eZ-avm"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Stop"/>
+                                                        <connections>
+                                                            <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="12g-4Q-dNX"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
