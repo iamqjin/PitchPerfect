@@ -13,6 +13,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder: AVAudioRecorder!
     
+    var soundFileURL:URL!
+    
+    var recordingResume = false
+    var recordingFirst = false
+    
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
@@ -27,10 +32,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         print("viewWillAppear called")
     }
     
+    
     @IBAction func recordAudio(_ sender: AnyObject) {
+        
         recordingLabel.text = "Recording in progress"
         stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+//        recordButton.isEnabled = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -40,12 +47,31 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
-        try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
-        audioRecorder.delegate = self
-        audioRecorder.isMeteringEnabled = true
-        audioRecorder.prepareToRecord()
-        audioRecorder.record()
+       
+        //재녹음
+        if recordingFirst == true{
+            print("일시정지")
+            recordingLabel.text = "Paused"
+            audioRecorder.pause()
+            recordingResume = true
+            recordingFirst = false
+        } else if recordingFirst == false && recordingResume == false {
+            print("녹음시작")
+            recordingFirst = true
+            try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+            audioRecorder.delegate = self
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
+        } else if recordingResume == true {
+            print("재녹음")
+            recordingFirst = true
+            audioRecorder.record()
+        }
+       
+       
     }
+    
     
     @IBAction func stopRecording(_ sender: AnyObject) {
         recordButton.isEnabled = true
