@@ -12,9 +12,25 @@
 		F31215C41E1973B100ECEEF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31215C21E1973B100ECEEF5 /* Main.storyboard */; };
 		F31215C61E1973B100ECEEF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31215C51E1973B100ECEEF5 /* Assets.xcassets */; };
 		F31215C91E1973B100ECEEF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31215C71E1973B100ECEEF5 /* LaunchScreen.storyboard */; };
+		F36A1F361E29A91100702D48 /* NaverSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36A1F351E29A91100702D48 /* NaverSpeech.framework */; };
+		F36A1F371E29A91100702D48 /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F36A1F351E29A91100702D48 /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F39ABAD51E2149B7008A7D1C /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39ABAD41E2149B7008A7D1C /* PlaySoundsViewController.swift */; };
 		F39AD0FF1E225C4C00DFFB52 /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39AD0FE1E225C4C00DFFB52 /* PlaySoundsViewController+Audio.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F36A1F381E29A91100702D48 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F36A1F371E29A91100702D48 /* NaverSpeech.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F31215BB1E1973B100ECEEF5 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		F31215C51E1973B100ECEEF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31215C81E1973B100ECEEF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F31215CA1E1973B100ECEEF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F36A1F351E29A91100702D48 /* NaverSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaverSpeech.framework; sourceTree = "<group>"; };
 		F39ABAD41E2149B7008A7D1C /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		F39AD0FE1E225C4C00DFFB52 /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36A1F361E29A91100702D48 /* NaverSpeech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 		F31215B21E1973B100ECEEF5 = {
 			isa = PBXGroup;
 			children = (
+				F36A1F351E29A91100702D48 /* NaverSpeech.framework */,
 				F31215BD1E1973B100ECEEF5 /* PitchPerfect */,
 				F31215BC1E1973B100ECEEF5 /* Products */,
 			);
@@ -80,6 +99,7 @@
 				F31215B71E1973B100ECEEF5 /* Sources */,
 				F31215B81E1973B100ECEEF5 /* Frameworks */,
 				F31215B91E1973B100ECEEF5 /* Resources */,
+				F36A1F381E29A91100702D48 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +288,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PitchPerfect;
@@ -280,6 +305,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PitchPerfect;

@@ -21,25 +21,32 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var recordingResume = false
     var recordingFirst = false
     
-    
+    //MARK: 아울렛 선언
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
-        statusLabel.text = String(format: "%02d:%02d")
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear called")
+        statusLabel.text = String(format: "%02d:%02d")
+        //재실행 판단자
+        recordingResume = false
+        recordingFirst = false
     }
     
     
-
     //타이머
     func updateAudioMeter(_ timer:Timer) {
         
@@ -49,18 +56,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let s = String(format: "%02d:%02d", min, sec)
             statusLabel.text = s
             audioRecorder.updateMeters()
-            // if you want to draw some graphics...
-            //var apc0 = recorder.averagePowerForChannel(0)
-            //var peak0 = recorder.peakPowerForChannel(0)
         }
     }
     
+    //오디오 녹음버튼 작동 액션
     @IBAction func recordAudio(_ sender: AnyObject) {
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(RecordSoundsViewController.updateAudioMeter), userInfo: nil, repeats: true)
         
+        
         recordingLabel.text = "Recording in progress"
-        stopRecordingButton.isEnabled = true
+        stopRecordingButton.isEnabled = true //녹음 버튼 눌렀을시 정지버튼 활성화
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -73,13 +79,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
        
         //재녹음
         if recordingFirst == true{
-            print("일시정지")
+            //녹음 일시정지
             recordingLabel.text = "Paused"
             audioRecorder.pause()
             recordingResume = true
             recordingFirst = false
         } else if recordingFirst == false && recordingResume == false {
-            print("녹음시작")
+            //녹음 시작
             recordingFirst = true
             try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
             audioRecorder.delegate = self
@@ -87,7 +93,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             audioRecorder.prepareToRecord()
             audioRecorder.record()
         } else if recordingResume == true {
-            print("재녹음")
+            //재녹음
             recordingFirst = true
             audioRecorder.record()
         }
@@ -95,7 +101,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
        
     }
     
-    
+    //녹음 정지 버튼 액션
     @IBAction func stopRecording(_ sender: AnyObject) {
         recordButton.isEnabled = true
         stopRecordingButton.isEnabled = false
@@ -106,7 +112,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         timer.invalidate()
     }
     
+    //녹음이 끝난 뒤 작동
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        
         if flag {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         } else {
@@ -115,6 +123,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     }
     
+    //녹음이 끝난 뒤 세그웨이 화면 전환
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecording" {
             let playSoundsVC = segue.destination as! PlaySoundsViewController

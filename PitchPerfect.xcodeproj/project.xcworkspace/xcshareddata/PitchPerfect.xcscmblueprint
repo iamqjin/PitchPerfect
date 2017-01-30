@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FE2241450E6B7574E36BA3AAE0CFE6647BC7F7FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FE2241450E6B7574E36BA3AAE0CFE6647BC7F7FF" : 9223372036854775807,
+    "448FA02D44027F10392198E798BBA4CD5ABB566C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A7FDD0A5-3333-40F5-B047-F6F496504A02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FE2241450E6B7574E36BA3AAE0CFE6647BC7F7FF" : "PitchPerfect\/",
+    "448FA02D44027F10392198E798BBA4CD5ABB566C" : "naverspeech-sdk-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PitchPerfect",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PitchPerfect.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/naver\/naverspeech-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "448FA02D44027F10392198E798BBA4CD5ABB566C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iamqjin\/PitchPerfect.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FE2241450E6B7574E36BA3AAE0CFE6647BC7F7FF"
+    }
+  ]
+}
